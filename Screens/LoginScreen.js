@@ -5,6 +5,7 @@ import {
   View,
   ImageBackground,
   TextInput,
+  Button,
 } from "react-native";
 
 export default function LoginScreen() {
@@ -15,8 +16,16 @@ export default function LoginScreen() {
         resizeMode="cover"
         style={styles.image}
       >
-        <Text style={styles.text}>Увійти</Text>
-        <TextInput style={styles.input}></TextInput>
+        <View style={styles.form}>
+          <Text style={styles.inputTitle}>Увійти</Text>
+          <View>
+            <TextInput style={styles.input}></TextInput>
+          </View>
+          <View style={{ marginTop: 16 }}>
+            <TextInput style={styles.input} secureTextEntry={true}></TextInput>
+          </View>
+          <Button title={"Увійти"} />
+        </View>
       </ImageBackground>
     </View>
   );
@@ -33,12 +42,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     // alignItems: "center",
   },
-  text: { color: "#fff", fontSize: 30 },
+  form: { marginHorizontal: 16 },
+  inputTitle: { color: "#fff", fontSize: 30 },
   input: {
     borderWidth: 1,
     borderColor: "#fff",
     borderRadius: 6,
     height: 50,
-    marginHorizontal: 16,
   },
 });
