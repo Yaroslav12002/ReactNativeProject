@@ -5,7 +5,7 @@ import {
   View,
   ImageBackground,
   TextInput,
-  Button,
+  TouchableOpacity,
 } from "react-native";
 
 export default function LoginScreen() {
@@ -24,7 +24,9 @@ export default function LoginScreen() {
           <View style={{ marginTop: 16 }}>
             <TextInput style={styles.input} secureTextEntry={true}></TextInput>
           </View>
-          <Button title={"Увійти"} />
+          <TouchableOpacity activeOpacity={0.8} style={styles.btn}>
+            <Text style={styles.btnTitle}>Увійти</Text>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     </View>
@@ -50,4 +52,13 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     height: 50,
   },
+  btn: {
+    height: 51,
+    marginTop: 43,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FF6C00",
+    borderRadius: 100,
+  },
+  btnTitle: { fontFamily: "Roboto", fontSize: 16, color: "#FFF" },
 });
